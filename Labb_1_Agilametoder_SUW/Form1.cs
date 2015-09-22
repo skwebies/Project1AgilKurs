@@ -27,21 +27,22 @@ namespace Labb_1_Agilametoder_SUW
             //  Stringlist.Add("Stina     stinastinastinastina@hotmail.com     0700554412");
              //Stringlist.Add("Bertil     beritochbertil@telia.com     0700000258");
 
-                Stringlist.Add(name.Text + " " + email.Text + " " + phone.Text);
+              //Stringlist.Add(name.Text + " " + email.Text + " " + phone.Text);
             
 
 
 
         }
-
+        // add input to the list box and assign it to Stringlist
         private void btn_add_Click(object sender, EventArgs e)
         {
+            Stringlist.Add(name.Text + "     " + email.Text + "     " + phone.Text);
 
             if (this.name.Text != "" && this.email.Text!="" && this.phone.Text != "") 
            {
+                
+               // Stringlist.Add(name.Text + "     " + email.Text + "     " + phone.Text);
                 employeeList.Items.Add(name.Text + "     " + email.Text + "     " + phone.Text);
-                Stringlist.Add(name.Text + "     " + email.Text + "     " + phone.Text);
-
 
             } else {
                 MessageBox.Show("Please enter some text", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -50,43 +51,62 @@ namespace Labb_1_Agilametoder_SUW
                 
 
             }
-            //Stringlist.Add(name.Text + "     " + email.Text + "     " + phone.Text);
+            
             Stuff();
         }
     
-
+        // show the list of input
         private void btn_show_Click(object sender, EventArgs e)
         {
-            int i = 0;while(i < Stringlist.Count)
+          if (employeeList.Items.Count < 0) {
+
+                MessageBox.Show("First add your items!","Error",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }else {
+
+                int i = 0;while(i < Stringlist.Count)
             {
                 employeeList.Items.Add(Stringlist.ElementAt(i)); i++;
-            }
-       Stuff();
 
+                    
+                }
+
+                Stuff();
+
+            }
         }
 
        
-
+        // Clear the text box values
         private void Stuff()
         {
             name.Clear(); email.Clear(); phone.Clear();
           
         }
-
+        // clear the list box
         private void ClearList()
         {
 
             employeeList.Items.Clear();
 
         }
-
+        // search thru list box content
         private void btn_search_Click(object sender, EventArgs e)
         {
 
-            string str = txt_search.Text;int i = 0;
+            string str = txt_search.Text;
+            int i = 0;
             while (i < Stringlist.Count)
-            {if (Stringlist.ElementAt(i).Contains(str)){    MessageBox.Show("Hittade: " + Stringlist.ElementAt(i)); i++;}else
-                {MessageBox.Show("Nope"); i++; }}
+
+            {
+                if (Stringlist.ElementAt(i).Contains(str))
+
+                {    MessageBox.Show("Hittade: " + Stringlist.ElementAt(i)); i++;
+
+                } else{
+                    MessageBox.Show("Nope"); i++;
+                }
+
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -98,5 +118,22 @@ namespace Labb_1_Agilametoder_SUW
         {
            ClearList();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        if (employeeList.Items.Count > 0)
+        {
+
+                employeeList.Items.Remove(employeeList.SelectedItem);
+
+        }
+        else
+        {
+                MessageBox.Show("Already Empty");
+        }
+    }
+
+       
     }
 }

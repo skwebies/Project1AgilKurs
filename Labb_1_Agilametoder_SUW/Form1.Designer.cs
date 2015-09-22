@@ -40,6 +40,7 @@
             this.phone = new System.Windows.Forms.TextBox();
             this.email = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // employeeList
@@ -102,51 +103,65 @@
             this.btn_search.TabIndex = 23;
             this.btn_search.Text = "Search";
             this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // btn_show
             // 
-            this.btn_show.Location = new System.Drawing.Point(117, 174);
+            this.btn_show.Location = new System.Drawing.Point(154, 173);
             this.btn_show.Name = "btn_show";
-            this.btn_show.Size = new System.Drawing.Size(69, 45);
+            this.btn_show.Size = new System.Drawing.Size(47, 45);
             this.btn_show.TabIndex = 22;
             this.btn_show.Text = "Show";
             this.btn_show.UseVisualStyleBackColor = true;
+            this.btn_show.Click += new System.EventHandler(this.btn_show_Click);
             // 
             // btn_add
             // 
             this.btn_add.Location = new System.Drawing.Point(37, 174);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(69, 44);
+            this.btn_add.Size = new System.Drawing.Size(50, 44);
             this.btn_add.TabIndex = 21;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // phone
             // 
             this.phone.Location = new System.Drawing.Point(37, 137);
             this.phone.Name = "phone";
-            this.phone.Size = new System.Drawing.Size(149, 20);
+            this.phone.Size = new System.Drawing.Size(164, 20);
             this.phone.TabIndex = 20;
             // 
             // email
             // 
             this.email.Location = new System.Drawing.Point(37, 82);
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(149, 20);
+            this.email.Size = new System.Drawing.Size(164, 20);
             this.email.TabIndex = 19;
             // 
             // name
             // 
             this.name.Location = new System.Drawing.Point(37, 32);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(149, 20);
+            this.name.Size = new System.Drawing.Size(164, 20);
             this.name.TabIndex = 18;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(93, 174);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(53, 44);
+            this.button2.TabIndex = 28;
+            this.button2.Text = "Delete Items";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 481);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -181,6 +196,7 @@
         private System.Windows.Forms.TextBox phone;
         private System.Windows.Forms.TextBox email;
         private System.Windows.Forms.TextBox name;
+        private System.Windows.Forms.Button button2;
     }
 }
 
